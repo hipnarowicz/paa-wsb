@@ -2,6 +2,7 @@ const storage = require('azure-storage')
 const service = storage.createTableService()
 const table = 'tasks'
 const uuid = require('uuid')
+const tasks = require('./routes/tasks')
 const uuid = require('uuid')
 const createTask = async (title) => (
   new Promise((resolve, reject) => {
