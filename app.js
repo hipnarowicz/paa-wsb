@@ -1,4 +1,4 @@
-require('./store').init(
+require('./store').init()
 const Koa = require('koa')
 const app = new Koa()
 const views = require('koa-views')
@@ -6,6 +6,7 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
+const tasks = require('./routes/tasks')
 
 const index = require('./routes/index')
 const users = require('./routes/users')
