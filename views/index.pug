@@ -8,9 +8,16 @@ block content
     input(type="text" id="title" name="title")
     br
     input(type="submit", value="Dodaj")
-table
+  table
     tr
-      th(scope= "col") Tytuł
+	th(scope= "col") Tytuł
+	th(scope= "col") Status
+	th(scope= "col") Akcje
     each task in tasks
       tr
         td= task.title
+	td= (task.status == 'completed' ? 'Zakończone' : 'Otwarte')
+	td
+          button(type="button" onclick=`updateTaskStatus('${task.id}', 'completed')`) ✓
+block scripts
+  script(src="javascripts/index.js")
