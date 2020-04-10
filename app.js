@@ -1,4 +1,3 @@
-require('./store').init()
 const Koa = require('koa')
 const app = new Koa()
 const views = require('koa-views')
@@ -13,6 +12,7 @@ const tasks = require('./routes/tasks')
 
 // error handler
 onerror(app)
+
 // middlewares
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
@@ -44,3 +44,4 @@ app.on('error', (err, ctx) => {
 });
 
 module.exports = app
+require('./store').init()
